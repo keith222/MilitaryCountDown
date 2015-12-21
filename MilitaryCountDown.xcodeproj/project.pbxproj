@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		535C78871C2849D400FADCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535C78861C2849D400FADCA0 /* AppDelegate.swift */; };
+		535C78891C2849D400FADCA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535C78881C2849D400FADCA0 /* ViewController.swift */; };
+		535C788C1C2849D400FADCA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535C788A1C2849D400FADCA0 /* Main.storyboard */; };
+		535C788F1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 535C788D1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodeld */; };
+		535C78911C2849D400FADCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535C78901C2849D400FADCA0 /* Assets.xcassets */; };
+		535C78941C2849D400FADCA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		535C78831C2849D400FADCA0 /* MilitaryCountDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilitaryCountDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		535C78861C2849D400FADCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		535C78881C2849D400FADCA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		535C788B1C2849D400FADCA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		535C788E1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MilitaryCountDown.xcdatamodel; sourceTree = "<group>"; };
+		535C78901C2849D400FADCA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		535C78931C2849D400FADCA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		535C78951C2849D400FADCA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		535C78801C2849D400FADCA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		535C787A1C2849D400FADCA0 = {
+			isa = PBXGroup;
+			children = (
+				535C78851C2849D400FADCA0 /* MilitaryCountDown */,
+				535C78841C2849D400FADCA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		535C78841C2849D400FADCA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				535C78831C2849D400FADCA0 /* MilitaryCountDown.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		535C78851C2849D400FADCA0 /* MilitaryCountDown */ = {
+			isa = PBXGroup;
+			children = (
+				535C78861C2849D400FADCA0 /* AppDelegate.swift */,
+				535C78881C2849D400FADCA0 /* ViewController.swift */,
+				535C788A1C2849D400FADCA0 /* Main.storyboard */,
+				535C78901C2849D400FADCA0 /* Assets.xcassets */,
+				535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */,
+				535C78951C2849D400FADCA0 /* Info.plist */,
+				535C788D1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodeld */,
+			);
+			path = MilitaryCountDown;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		535C78821C2849D400FADCA0 /* MilitaryCountDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535C78981C2849D400FADCA0 /* Build configuration list for PBXNativeTarget "MilitaryCountDown" */;
+			buildPhases = (
+				535C787F1C2849D400FADCA0 /* Sources */,
+				535C78801C2849D400FADCA0 /* Frameworks */,
+				535C78811C2849D400FADCA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MilitaryCountDown;
+			productName = MilitaryCountDown;
+			productReference = 535C78831C2849D400FADCA0 /* MilitaryCountDown.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		535C787B1C2849D400FADCA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Yang Tun-Kai";
+				TargetAttributes = {
+					535C78821C2849D400FADCA0 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8MREJM6257;
+					};
+				};
+			};
+			buildConfigurationList = 535C787E1C2849D400FADCA0 /* Build configuration list for PBXProject "MilitaryCountDown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 535C787A1C2849D400FADCA0;
+			productRefGroup = 535C78841C2849D400FADCA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				535C78821C2849D400FADCA0 /* MilitaryCountDown */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		535C78811C2849D400FADCA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535C78941C2849D400FADCA0 /* LaunchScreen.storyboard in Resources */,
+				535C78911C2849D400FADCA0 /* Assets.xcassets in Resources */,
+				535C788C1C2849D400FADCA0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		535C787F1C2849D400FADCA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535C788F1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodeld in Sources */,
+				535C78891C2849D400FADCA0 /* ViewController.swift in Sources */,
+				535C78871C2849D400FADCA0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		535C788A1C2849D400FADCA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535C788B1C2849D400FADCA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535C78931C2849D400FADCA0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		535C78961C2849D400FADCA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		535C78971C2849D400FADCA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		535C78991C2849D400FADCA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MilitaryCountDown/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sparkr.MilitaryCountDown;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		535C789A1C2849D400FADCA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MilitaryCountDown/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sparkr.MilitaryCountDown;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		535C787E1C2849D400FADCA0 /* Build configuration list for PBXProject "MilitaryCountDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535C78961C2849D400FADCA0 /* Debug */,
+				535C78971C2849D400FADCA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535C78981C2849D400FADCA0 /* Build configuration list for PBXNativeTarget "MilitaryCountDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535C78991C2849D400FADCA0 /* Debug */,
+				535C789A1C2849D400FADCA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		535C788D1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				535C788E1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodel */,
+			);
+			currentVersion = 535C788E1C2849D400FADCA0 /* MilitaryCountDown.xcdatamodel */;
+			path = MilitaryCountDown.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 535C787B1C2849D400FADCA0 /* Project object */;
+}

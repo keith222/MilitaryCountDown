@@ -8,6 +8,21 @@
 
 import Foundation
 
+extension NSDateComponents {
+    /** returns the current date plus the receiver's interval */
+    var fromNow: NSDate {
+        let cal = NSCalendar.currentCalendar()
+        return cal.dateByAddingComponents(self, toDate: NSDate(), options: [])!
+    }
+    
+    /** returns the current date minus the receiver's interval */
+    var ago: NSDate {
+        let cal = NSCalendar.currentCalendar()
+        return cal.dateByAddingComponents(self, toDate: NSDate(), options: [])!
+    }
+}
+
+/** functions to convert integers into various time intervals */
 extension Int {
     var minutes: NSDateComponents {
         let comps = NSDateComponents()

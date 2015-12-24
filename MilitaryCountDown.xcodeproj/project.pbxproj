@@ -14,6 +14,10 @@
 		535C788C1C2849D400FADCA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535C788A1C2849D400FADCA0 /* Main.storyboard */; };
 		535C78911C2849D400FADCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535C78901C2849D400FADCA0 /* Assets.xcassets */; };
 		535C78941C2849D400FADCA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */; };
+		536A82821C2C35E9006B0B76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82811C2C35E9006B0B76 /* Foundation.framework */; };
+		536A82841C2C35F8006B0B76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82831C2C35F8006B0B76 /* CoreGraphics.framework */; };
+		536A82861C2C3600006B0B76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82851C2C3600006B0B76 /* QuartzCore.framework */; };
+		537805191C2C453A00535207 /* SlideUpTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537805181C2C453A00535207 /* SlideUpTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		535C78901C2849D400FADCA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		535C78931C2849D400FADCA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		535C78951C2849D400FADCA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536A82811C2C35E9006B0B76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		536A82831C2C35F8006B0B76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		536A82851C2C3600006B0B76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		537805181C2C453A00535207 /* SlideUpTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536A82861C2C3600006B0B76 /* QuartzCore.framework in Frameworks */,
+				536A82841C2C35F8006B0B76 /* CoreGraphics.framework in Frameworks */,
+				536A82821C2C35E9006B0B76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C28F0E169877721B010F519 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				536A82851C2C3600006B0B76 /* QuartzCore.framework */,
+				536A82831C2C35F8006B0B76 /* CoreGraphics.framework */,
+				536A82811C2C35E9006B0B76 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		535C787A1C2849D400FADCA0 = {
 			isa = PBXGroup;
 			children = (
 				535C78851C2849D400FADCA0 /* MilitaryCountDown */,
 				535C78841C2849D400FADCA0 /* Products */,
+				4C28F0E169877721B010F519 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +88,7 @@
 				535C78901C2849D400FADCA0 /* Assets.xcassets */,
 				535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */,
 				535C78951C2849D400FADCA0 /* Info.plist */,
+				537805181C2C453A00535207 /* SlideUpTransitionAnimator.swift */,
 			);
 			path = MilitaryCountDown;
 			sourceTree = "<group>";
@@ -142,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537805191C2C453A00535207 /* SlideUpTransitionAnimator.swift in Sources */,
 				535C78891C2849D400FADCA0 /* ViewController.swift in Sources */,
 				531BB3D41C298B6200761B99 /* DateSelectViewController.swift in Sources */,
 				531BB3D61C29AF2D00761B99 /* timeDateExtension.swift in Sources */,
@@ -257,6 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MilitaryCountDown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sparkr.MilitaryCountDown;
@@ -269,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MilitaryCountDown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sparkr.MilitaryCountDown;

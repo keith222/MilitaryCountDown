@@ -19,6 +19,9 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newToValue: CGFloat = 0.5 as CGFloat
+        addCircleView(self.circleChartView, isForeground: true, duration: 0.5, fromValue: 0.0, toValue: newToValue)
         // Do any additional setup after loading the view, typically from a nib.
     
     }
@@ -26,13 +29,15 @@ class ViewController: UIViewController{
     override func viewDidAppear(animated: Bool) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("DateSelect") as! DateSelectViewController
+        
+        //如果userdefault裡面沒有日期資料則跳出設定視窗
         if(userDefault.stringForKey("entryDay")! == "" && userDefault.stringForKey("quitDay")! == ""){
             self.presentViewController(resultViewController, animated:true, completion:nil)
         }
 
     }
     
-    func adCircleView(myView: UIView, isForeground: Bool, duration: NSTimeInterval, fromValue: CGFloat, toValue: CGFloat){
+    func addCircleView(myView: UIView, isForeground: Bool, duration: NSTimeInterval, fromValue: CGFloat, toValue: CGFloat){
         //設定circlechart 的長寬
         let circleWidth = CGFloat(250)
         let circleHeight = circleWidth

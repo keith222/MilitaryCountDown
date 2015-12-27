@@ -83,12 +83,12 @@
 				535C78861C2849D400FADCA0 /* AppDelegate.swift */,
 				535C78881C2849D400FADCA0 /* ViewController.swift */,
 				531BB3D31C298B6200761B99 /* DateSelectViewController.swift */,
+				537805181C2C453A00535207 /* SlideUpTransitionAnimator.swift */,
 				535C788A1C2849D400FADCA0 /* Main.storyboard */,
 				531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */,
 				535C78901C2849D400FADCA0 /* Assets.xcassets */,
 				535C78921C2849D400FADCA0 /* LaunchScreen.storyboard */,
 				535C78951C2849D400FADCA0 /* Info.plist */,
-				537805181C2C453A00535207 /* SlideUpTransitionAnimator.swift */,
 			);
 			path = MilitaryCountDown;
 			sourceTree = "<group>";

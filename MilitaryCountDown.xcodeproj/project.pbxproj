@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531326CF1C3024D3003A7AAD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531326CE1C3024D3003A7AAD /* CircleView.swift */; };
 		531BB3D41C298B6200761B99 /* DateSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BB3D31C298B6200761B99 /* DateSelectViewController.swift */; };
 		531BB3D61C29AF2D00761B99 /* timeDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */; };
 		535C78871C2849D400FADCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535C78861C2849D400FADCA0 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		531326CE1C3024D3003A7AAD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		531BB3D31C298B6200761B99 /* DateSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectViewController.swift; sourceTree = "<group>"; };
 		531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeDateExtension.swift; sourceTree = "<group>"; };
 		535C78831C2849D400FADCA0 /* MilitaryCountDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilitaryCountDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 				535C78861C2849D400FADCA0 /* AppDelegate.swift */,
 				535C78881C2849D400FADCA0 /* ViewController.swift */,
 				531BB3D31C298B6200761B99 /* DateSelectViewController.swift */,
+				531326CE1C3024D3003A7AAD /* CircleView.swift */,
 				535C788A1C2849D400FADCA0 /* Main.storyboard */,
 				531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */,
 				535C78901C2849D400FADCA0 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				535C78891C2849D400FADCA0 /* ViewController.swift in Sources */,
+				531326CF1C3024D3003A7AAD /* CircleView.swift in Sources */,
 				531BB3D41C298B6200761B99 /* DateSelectViewController.swift in Sources */,
 				531BB3D61C29AF2D00761B99 /* timeDateExtension.swift in Sources */,
 				535C78871C2849D400FADCA0 /* AppDelegate.swift in Sources */,

@@ -13,14 +13,23 @@ class ViewController: UIViewController{
     
     @IBOutlet var circleChartView: UIView!
     @IBOutlet var percentLabel: UILabel!
-
+    
+    //初始NSUserDefaults
+    let userDefault = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let userDefault = NSUserDefaults.standardUserDefaults()
-        print(userDefault.stringForKey("entryDay"))
-        print(userDefault.stringForKey("quitDay"))
-        
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("DateSelect") as! DateSelectViewController
+        if(userDefault.stringForKey("entryDay")! == "" && userDefault.stringForKey("quitDay")! == ""){
+            self.presentViewController(resultViewController, animated:true, completion:nil)
+        }
+
     }
     
     func adCircleView(myView: UIView, isForeground: Bool, duration: NSTimeInterval, fromValue: CGFloat, toValue: CGFloat){

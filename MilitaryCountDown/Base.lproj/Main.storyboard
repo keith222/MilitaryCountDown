@@ -109,7 +109,7 @@
         <!--DateSelect-->
         <scene sceneID="ZFr-A1-7mc">
             <objects>
-                <viewController storyboardIdentifier="DateSelect" title="DateSelect" id="EqE-ao-PsE" customClass="DateSelectViewController" customModule="MilitaryCountDown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DateSelect" title="DateSelect" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EqE-ao-PsE" customClass="DateSelectViewController" customModule="MilitaryCountDown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNG-au-BNY"/>
                         <viewControllerLayoutGuide type="bottom" id="iN1-Es-QrN"/>

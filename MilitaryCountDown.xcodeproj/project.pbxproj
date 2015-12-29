@@ -18,6 +18,7 @@
 		536A82821C2C35E9006B0B76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82811C2C35E9006B0B76 /* Foundation.framework */; };
 		536A82841C2C35F8006B0B76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82831C2C35F8006B0B76 /* CoreGraphics.framework */; };
 		536A82861C2C3600006B0B76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A82851C2C3600006B0B76 /* QuartzCore.framework */; };
+		538CC79C1C32D95D007D4206 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538CC79B1C32D95D007D4206 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		536A82811C2C35E9006B0B76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		536A82831C2C35F8006B0B76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		536A82851C2C3600006B0B76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		538CC79B1C32D95D007D4206 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				535C78861C2849D400FADCA0 /* AppDelegate.swift */,
+				538CC79B1C32D95D007D4206 /* CameraViewController.swift */,
 				535C78881C2849D400FADCA0 /* ViewController.swift */,
 				531BB3D31C298B6200761B99 /* DateSelectViewController.swift */,
 				531326CE1C3024D3003A7AAD /* CircleView.swift */,
@@ -170,6 +173,7 @@
 				531BB3D41C298B6200761B99 /* DateSelectViewController.swift in Sources */,
 				531BB3D61C29AF2D00761B99 /* timeDateExtension.swift in Sources */,
 				535C78871C2849D400FADCA0 /* AppDelegate.swift in Sources */,
+				538CC79C1C32D95D007D4206 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@ class ViewController: UIViewController{
     let userDefault = NSUserDefaults.standardUserDefaults()
     let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
     let dateFormat: NSDateFormatter = NSDateFormatter()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -91,7 +91,9 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pYv-zB-lX0" kind="presentation" id="tfd-24-BPj"/>
+                                    <segue destination="pYv-zB-lX0" kind="popoverPresentation" popoverAnchorView="c9c-cL-ebr" id="tfd-24-BPj">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,8 +161,49 @@
                     <view key="view" contentMode="scaleToFill" id="exk-lL-pPb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-x6-VMA">
+                                <rect key="frame" x="260" y="493" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="LJl-Xc-l5A"/>
+                                    <constraint firstAttribute="width" constant="80" id="QQs-3H-8Qx"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-ib-NwR">
+                                <rect key="frame" x="169" y="508" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0kS-x8-VqF"/>
+                                    <constraint firstAttribute="width" constant="50" id="HY1-xb-6DM"/>
+                                </constraints>
+                                <state key="normal" image="switch"/>
+                                <connections>
+                                    <action selector="zoomButton:" destination="pYv-zB-lX0" eventType="touchUpInside" id="Hkm-0x-xeg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="QAu-iN-k3P" firstAttribute="top" secondItem="U3e-x6-VMA" secondAttribute="bottom" constant="27" id="4JQ-cz-DmJ"/>
+                            <constraint firstItem="QAu-iN-k3P" firstAttribute="top" secondItem="kDd-ib-NwR" secondAttribute="bottom" constant="42" id="5Hr-QY-qTL"/>
+                            <constraint firstItem="U3e-x6-VMA" firstAttribute="centerX" secondItem="exk-lL-pPb" secondAttribute="centerX" id="EtM-DE-Q2m"/>
+                            <constraint firstItem="U3e-x6-VMA" firstAttribute="leading" secondItem="kDd-ib-NwR" secondAttribute="trailing" constant="41" id="r6y-bD-G95"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoButton" destination="U3e-x6-VMA" id="2NM-C5-itm"/>
+                        <outlet property="switchButton" destination="kDd-ib-NwR" id="NEg-Xj-Lth"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ft3-2C-zu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,6 +322,7 @@
     </scenes>
     <resources>
         <image name="camera" width="50" height="50"/>
+        <image name="switch" width="50" height="50"/>
     </resources>
     <color key="tintColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

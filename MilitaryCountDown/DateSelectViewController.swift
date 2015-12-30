@@ -126,5 +126,14 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         userDefault.setObject(entryDay as NSString, forKey: "entryDay")
         userDefault.setObject(quitDay as NSString, forKey: "quitDay")
         userDefault.synchronize()
+        print("entry:\(entryDay)")
+        print("quit:\(quitDay)")
+        
+        //儲存後回到首頁
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("CountDown") as! ViewController
+        self.presentViewController(resultViewController, animated:true, completion:nil)
+
+        
     }
 }

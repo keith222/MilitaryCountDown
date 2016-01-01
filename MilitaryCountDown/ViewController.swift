@@ -64,7 +64,7 @@ class ViewController: UIViewController{
         let circleHeight = circleWidth
         
         //畫出新的CircleView
-        let circleView = CicleView(frame: CGRectMake(0,0,circleWidth,circleHeight))
+        let circleView = CircleView(frame: CGRectMake(0,0,circleWidth,circleHeight))
         
         //設定circlechart線條顏色
         circleView.setStrokeColor(UIColor(red: 53.0/255.0, green: 193.0/255.0, blue: 78.0/255.0, alpha: 1).CGColor)
@@ -83,7 +83,9 @@ class ViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func unwindToCamera(segue:UIStoryboardSegue) {
+    }
 
 }
 

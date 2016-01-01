@@ -78,7 +78,6 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-        
     }
     
     func dateSelect(sender:UIDatePicker){
@@ -105,7 +104,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         self.quitDatePicker.datePickerMode = UIDatePickerMode.Date
         sender.inputView = self.quitDatePicker
         
-        self.quitDatePicker.addTarget(self, action: "dateSelect:", forControlEvents: UIControlEvents.ValueChanged)
+        self.quitDatePicker.addTarget(self, action: Selector("dateSelect:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func dateTextField(sender: UITextField) {

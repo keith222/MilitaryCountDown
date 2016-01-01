@@ -13,7 +13,7 @@ class CameraViewController: UIViewController {
 
     @IBOutlet var photoButton: UIButton!
     @IBOutlet var switchButton: UIButton!
-    
+    @IBOutlet var backButton: UIButton!
     
     //AVFoundation核心
     let captureSession = AVCaptureSession()
@@ -28,12 +28,16 @@ class CameraViewController: UIViewController {
     var stillImage: UIImage?
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var zoomGestureRecognizer = UIPinchGestureRecognizer()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.photoButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.photoButton.setTitleColor(UIColor.darkGrayColor(), forState: .Highlighted)
+        self.backButton.layer.borderColor = UIColor.whiteColor().CGColor
         
         //高解析度照相
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
@@ -67,21 +71,55 @@ class CameraViewController: UIViewController {
         cameraPreviewLayer?.frame = view.layer.frame
         view.bringSubviewToFront(self.photoButton)
         view.bringSubviewToFront(self.switchButton)
+        view.bringSubviewToFront(self.backButton)
         captureSession.startRunning()
-        
-        
         // Do any additional setup after loading the view.
+    }
+    
+    //手勢放大
+    func zoomGesture() {
+        if self.zoomGestureRecognizer.state == UIGestureRecognizerState.Changed{
+            if let zoomFactor = self.currentDevice?.videoZoomFactor{
+                var newZoomFactor:CGFloat?
+                if zoomFactor < 5.0{
+                    newZoomFactor = min(zoomFactor + 1.0, 5.0)
+                    do {
+                        try self.currentDevice?.lockForConfiguration()
+                        self.currentDevice?.rampToVideoZoomFactor(newZoomFactor!, withRate: 1.0)
+                        self.currentDevice?.unlockForConfiguration()
+                    } catch {
+                        print(error)
+                    }
+                }else if zoomFactor > 1.0{
+                    newZoomFactor = max(zoomFactor - 1.0, 1.0)
+                    do {
+                        try self.currentDevice?.lockForConfiguration()
+                        self.currentDevice?.rampToVideoZoomFactor(newZoomFactor!, withRate: 1.0)
+                        self.currentDevice?.unlockForConfiguration()
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func zoomButton(sender: AnyObject) {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPhoto"{
+            let photoViewController = segue.destinationViewController as! PhotoViewController
+            photoViewController.image = self.stillImage
+        }
+    }
+    
+    @IBAction func switchButton(sender: AnyObject) {
         captureSession.beginConfiguration()
         
         //變更相機位置
-
         let newDevice = (self.currentDevice?.position == AVCaptureDevicePosition.Back) ? self.frontFaceingCamera : self.backFacingCamera
         
         //移除輸入
@@ -104,4 +142,19 @@ class CameraViewController: UIViewController {
         captureSession.commitConfiguration()
         
     }
+    
+    @IBAction func captureButton(sender: AnyObject) {
+        let videoConnection = self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
+        
+        self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {
+            (imageDataSampleBuffer, error)-> Void in
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+            self.stillImage = UIImage(data: imageData)
+            self.performSegueWithIdentifier("showPhoto", sender: self)
+        })
+    }
+    
+    @IBAction func unwindToCamera(segue:UIStoryboardSegue) {
+    }
+    
 }

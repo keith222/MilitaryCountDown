@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CicleView: UIView {
+class CircleView: UIView {
     var circleLayer: CAShapeLayer!
     
     override init(frame: CGRect) {

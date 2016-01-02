@@ -66,12 +66,12 @@ class CameraViewController: UIViewController {
         
         //建構相機view
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(cameraPreviewLayer!)
+        self.view.layer.addSublayer(cameraPreviewLayer!)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         cameraPreviewLayer?.frame = view.layer.frame
-        view.bringSubviewToFront(self.photoButton)
-        view.bringSubviewToFront(self.switchButton)
-        view.bringSubviewToFront(self.backButton)
+        self.view.bringSubviewToFront(self.photoButton)
+        self.view.bringSubviewToFront(self.switchButton)
+        self.view.bringSubviewToFront(self.backButton)
         captureSession.startRunning()
         // Do any additional setup after loading the view.
     }
@@ -153,8 +153,4 @@ class CameraViewController: UIViewController {
             self.performSegueWithIdentifier("showPhoto", sender: self)
         })
     }
-    
-    @IBAction func unwindToCamera(segue:UIStoryboardSegue) {
-    }
-    
 }

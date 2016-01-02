@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -31,13 +32,20 @@ class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //設定照片預覽
         self.previewImage.image = image
+        
+        //國軍金句Picker建構
         self.sentensePicker.delegate = self
         self.sentensePicker.dataSource = self
         self.sentensePicker.frame = CGRectMake(0, self.view.bounds.height - 130, self.view.bounds.width, 130)
         self.sentensePicker.backgroundColor = UIColor.whiteColor()
+        
+        //按鈕
         self.saveButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        //增加手勢至金句Label
         self.sentenseLabel.userInteractionEnabled = true
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "sentensePicker:")
         self.sentenseLabel.addGestureRecognizer(tapGesture)
@@ -108,5 +116,41 @@ class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveButton(sender: AnyObject) {
+        if self.saveButton.titleLabel?.text == "Save"{
+            //將按鈕推至照片後面
+            self.view.sendSubviewToBack(self.saveButton)
+            self.view.sendSubviewToBack(self.cancelButton)
+            //儲存照片至相簿
+            UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 2.0)
+            self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            self.image = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            UIImageWriteToSavedPhotosAlbum(self.image!, nil, nil, nil)
+            //改變按鈕
+            self.saveButton.setTitle("Home", forState: .Normal)
+            self.cancelButton.setTitle("f", forState: .Normal)
+            self.cancelButton.backgroundColor = UIColor(red: 59.0/255.6, green: 89.0/255.0, blue: 152.0/255.0, alpha: 0.8)
+            //將按鈕送回前景
+            self.view.bringSubviewToFront(self.saveButton)
+            self.view.bringSubviewToFront(self.cancelButton)
+            
+        }else if self.saveButton.titleLabel?.text == "Home"{
+            //儲存後回到首頁
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("CountDown") as! ViewController
+            self.presentViewController(resultViewController, animated:true, completion:nil)
+        }
+    }
+    
+    @IBAction func fbShareButton(sender: AnyObject) {
+        if self.cancelButton.titleLabel?.text == "f"{
+            let fbViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            self.presentViewController(fbViewController, animated: true, completion: nil)
+            fbViewController.addImage(self.image)
+        }else if self.cancelButton.titleLabel?.text == "Cancel"{
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
 
 }

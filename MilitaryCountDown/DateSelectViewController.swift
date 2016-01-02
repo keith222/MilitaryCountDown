@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import iAd
 
 class DateSelectViewController: UIViewController,UITextFieldDelegate {
-
     
     @IBOutlet var entryDate: UITextField!
     @IBOutlet var decreaseDays: UITextField!
@@ -24,6 +24,8 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //放iAd
+        self.canDisplayBannerAds = true
         //按鈕外框
         self.sendButton.layer.cornerRadius = 20
         self.sendButton.layer.borderWidth = 1
@@ -78,7 +80,6 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-        
     }
     
     func dateSelect(sender:UIDatePicker){
@@ -105,7 +106,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         self.quitDatePicker.datePickerMode = UIDatePickerMode.Date
         sender.inputView = self.quitDatePicker
         
-        self.quitDatePicker.addTarget(self, action: "dateSelect:", forControlEvents: UIControlEvents.ValueChanged)
+        self.quitDatePicker.addTarget(self, action: Selector("dateSelect:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func dateTextField(sender: UITextField) {
@@ -126,5 +127,14 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         userDefault.setObject(entryDay as NSString, forKey: "entryDay")
         userDefault.setObject(quitDay as NSString, forKey: "quitDay")
         userDefault.synchronize()
+        print("entry:\(entryDay)")
+        print("quit:\(quitDay)")
+        
+        //儲存後回到首頁
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("CountDown") as! ViewController
+        self.presentViewController(resultViewController, animated:true, completion:nil)
+
+        
     }
 }

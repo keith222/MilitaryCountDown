@@ -145,9 +145,16 @@ class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func fbShareButton(sender: AnyObject) {
         if self.cancelButton.titleLabel?.text == "f"{
-            let fbViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            self.presentViewController(fbViewController, animated: true, completion: nil)
-            fbViewController.addImage(self.image)
+            //apple social kit fb
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+                let fbViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                self.presentViewController(fbViewController, animated: true, completion: nil)
+                fbViewController.addImage(self.image)
+            }else{
+                let alertMessage = UIAlertController(title: "無法連線到 Facebook", message: "您尚未登入您的 Facebook 帳號。請至 設定>Facebook 登入 ", preferredStyle: .Alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertMessage, animated: true, completion: nil)
+            }
         }else if self.cancelButton.titleLabel?.text == "Cancel"{
             dismissViewControllerAnimated(true, completion: nil)
         }

@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import iAd
 
 class DateSelectViewController: UIViewController,UITextFieldDelegate {
-
     
     @IBOutlet var entryDate: UITextField!
     @IBOutlet var decreaseDays: UITextField!
@@ -24,6 +24,8 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //放iAd
+        self.canDisplayBannerAds = true
         //按鈕外框
         self.sendButton.layer.cornerRadius = 20
         self.sendButton.layer.borderWidth = 1

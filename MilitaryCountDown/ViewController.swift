@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class ViewController: UIViewController{
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //放iAD
+        self.canDisplayBannerAds = true
         
         if(userDefault.stringForKey("entryDay") != nil && userDefault.stringForKey("quitDay") != nil){
             //取出userdefaults裡的日期

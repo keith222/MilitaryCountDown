@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5307B8031C38367D004E331D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5307B8021C38367D004E331D /* iAd.framework */; };
 		531326CF1C3024D3003A7AAD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531326CE1C3024D3003A7AAD /* CircleView.swift */; };
 		531BB3D41C298B6200761B99 /* DateSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BB3D31C298B6200761B99 /* DateSelectViewController.swift */; };
 		531BB3D61C29AF2D00761B99 /* timeDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5307B8021C38367D004E331D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		531326CE1C3024D3003A7AAD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		531BB3D31C298B6200761B99 /* DateSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectViewController.swift; sourceTree = "<group>"; };
 		531BB3D51C29AF2D00761B99 /* timeDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeDateExtension.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5307B8031C38367D004E331D /* iAd.framework in Frameworks */,
 				536A82861C2C3600006B0B76 /* QuartzCore.framework in Frameworks */,
 				536A82841C2C35F8006B0B76 /* CoreGraphics.framework in Frameworks */,
 				536A82821C2C35E9006B0B76 /* Foundation.framework in Frameworks */,
@@ -57,6 +60,7 @@
 		4C28F0E169877721B010F519 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5307B8021C38367D004E331D /* iAd.framework */,
 				536A82851C2C3600006B0B76 /* QuartzCore.framework */,
 				536A82831C2C35F8006B0B76 /* CoreGraphics.framework */,
 				536A82811C2C35E9006B0B76 /* Foundation.framework */,

@@ -130,6 +130,69 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         print("entry:\(entryDay)")
         print("quit:\(quitDay)")
         
+        //設定Local Notification
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        let pushMonth = 30.days.daysFrom(dateFormat.dateFromString(entryDay)!)
+        let pushHundred = 100.days.daysFrom(dateFormat.dateFromString(entryDay)!)
+        let pushHalfYear = 6.months.daysFrom(dateFormat.dateFromString(entryDay)!)
+        let pushCountDownHundred = 100.days.daysAgo(dateFormat.dateFromString(quitDay)!)
+        let puchCountDownMonth = 1.months.daysAgo(dateFormat.dateFromString(quitDay)!)
+        let title = "國軍倒數"
+        
+        //入伍破月
+        let monthNotification = UILocalNotification()
+        monthNotification.fireDate = pushMonth
+        monthNotification.timeZone = NSTimeZone.defaultTimeZone()
+        monthNotification.soundName = UILocalNotificationDefaultSoundName
+        monthNotification.alertBody = "恭喜破月（入伍）啦！！"
+        monthNotification.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(monthNotification)
+        
+        //入伍破百
+        let hundredNotification = UILocalNotification()
+        hundredNotification.fireDate = pushHundred
+        hundredNotification.timeZone = NSTimeZone.defaultTimeZone()
+        hundredNotification.soundName = UILocalNotificationDefaultSoundName
+        hundredNotification.alertBody = "恭喜破百（入伍）啦！！"
+        hundredNotification.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(hundredNotification)
+        
+        //入伍半年
+        let halfYearNotification = UILocalNotification()
+        halfYearNotification.fireDate = pushHalfYear
+        halfYearNotification.timeZone = NSTimeZone.defaultTimeZone()
+        halfYearNotification.soundName = UILocalNotificationDefaultSoundName
+        halfYearNotification.alertBody = "恭喜入伍半年啦！！要升一兵，還有加薪\"500\"塊囉！"
+        halfYearNotification.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(halfYearNotification)
+        
+        //退伍破百
+        let countDownHundredNotification = UILocalNotification()
+        countDownHundredNotification.fireDate = pushCountDownHundred
+        countDownHundredNotification.timeZone = NSTimeZone.defaultTimeZone()
+        countDownHundredNotification.soundName = UILocalNotificationDefaultSoundName
+        countDownHundredNotification.alertBody = "恭喜破百啦！！"
+        countDownHundredNotification.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(countDownHundredNotification)
+        
+        //退伍破月
+        let countDownMonthNotification = UILocalNotification()
+        countDownMonthNotification.fireDate = puchCountDownMonth
+        countDownMonthNotification.timeZone = NSTimeZone.defaultTimeZone()
+        countDownMonthNotification.soundName = UILocalNotificationDefaultSoundName
+        countDownMonthNotification.alertBody = "恭喜破月啦！！再撐一下！"
+        countDownMonthNotification.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(countDownMonthNotification)
+        
+        //退伍日
+        let endDay = UILocalNotification()
+        endDay.fireDate = dateFormat.dateFromString(quitDay)
+        endDay.timeZone = NSTimeZone.defaultTimeZone()
+        endDay.soundName = UILocalNotificationDefaultSoundName
+        endDay.alertBody = "恭喜終於登出啦！！"
+        endDay.alertTitle = title
+        UIApplication.sharedApplication().scheduleLocalNotification(endDay)
+        
         //儲存後回到首頁
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("CountDown") as! ViewController

@@ -46,6 +46,8 @@ class ViewController: UIViewController{
             
             //加入circle chart
             addCircleView(self.circleChartView, duration: 0.5, fromValue: 0.0, toValue: percentage)
+            print("\(entryDay!)")
+            print("\(8.days.daysFrom(entryDay!))")
         }
     
     }

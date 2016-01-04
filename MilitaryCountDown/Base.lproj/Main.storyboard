@@ -292,7 +292,7 @@
                                     <action selector="fbShareButton:" destination="fYF-8d-bet" eventType="touchUpInside" id="N4Q-kE-Rry"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜，不是罪，是罪該萬死" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-xA-s3f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點此選擇國軍金句" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-xA-s3f">
                                 <rect key="frame" x="20" y="498" width="560" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="IhC-T6-pEu"/>

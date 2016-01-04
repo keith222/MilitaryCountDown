@@ -196,7 +196,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         //儲存後回到首頁
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("CountDown") as! ViewController
-        self.presentViewController(resultViewController, animated:true, completion:nil)
+        self.navigationController?.pushViewController(resultViewController, animated: true)
 
         
     }

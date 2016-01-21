@@ -88,6 +88,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         self.dateFormat.dateFormat = "yyyy-MM-dd"
         if (sender == self.entryDatePicker){//入伍日期
             self.entryDate.text = dateFormat.stringFromDate(sender.date)
+            self.quitDate.text = dateFormat.stringFromDate(1.years.daysFrom(sender.date))
             self.entryDate.resignFirstResponder()
         }else{//退伍日期（如果折抵算錯可自行更改
             self.quitDate.text = dateFormat.stringFromDate(sender.date)

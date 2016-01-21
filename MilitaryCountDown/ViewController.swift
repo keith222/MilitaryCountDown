@@ -26,6 +26,7 @@ class ViewController: UIViewController{
         // Do any additional setup after loading the view, typically from a nib.
         //放iAD
         self.canDisplayBannerAds = true
+        self.navigationItem.hidesBackButton = true;
         
         if(userDefault.stringForKey("entryDay") != nil && userDefault.stringForKey("quitDay") != nil){
             //取出userdefaults裡的日期
@@ -57,7 +58,7 @@ class ViewController: UIViewController{
         
         //如果userdefault裡面沒有日期資料則跳出設定視窗
         if(userDefault.stringForKey("entryDay") == nil && userDefault.stringForKey("quitDay") == nil){
-            self.presentViewController(resultViewController, animated:true, completion:nil)
+            self.navigationController?.pushViewController(resultViewController, animated: true)
         }
 
     }

@@ -542,7 +542,6 @@
                             <constraint firstItem="iN1-Es-QrN" firstAttribute="top" secondItem="xCR-Z1-kW7" secondAttribute="bottom" id="Neu-f2-rbx"/>
                             <constraint firstItem="xCR-Z1-kW7" firstAttribute="top" secondItem="iNG-au-BNY" secondAttribute="bottom" constant="-64" id="mEb-dR-TXX"/>
                             <constraint firstAttribute="trailing" secondItem="xCR-Z1-kW7" secondAttribute="trailing" id="v4E-Hv-s4O"/>
->>>>>>> develope
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="日期設定" id="HZm-yE-QeC">

@@ -34,6 +34,8 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         self.decreaseDays.delegate = self
         self.decreaseDays.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
+        
+        
         // Do any additional setup after loading the view.
     }
     

@@ -292,7 +292,7 @@
                                     <action selector="fbShareButton:" destination="fYF-8d-bet" eventType="touchUpInside" id="N4Q-kE-Rry"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜，不是罪，是罪該萬死" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-xA-s3f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點此選擇國軍金句" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-xA-s3f">
                                 <rect key="frame" x="20" y="498" width="560" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="IhC-T6-pEu"/>
@@ -467,7 +467,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlh-Ud-cbx">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlh-Ud-cbx">
                                                 <rect key="frame" x="225" y="390" width="150" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="Tfi-Ed-99Z"/>

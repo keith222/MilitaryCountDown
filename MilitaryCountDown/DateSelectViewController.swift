@@ -68,7 +68,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         var quitDay = self.userCallendar.dateByAddingUnit(.Year, value: 1, toDate: entryDate!, options: [])
         quitDay = self.userCallendar.dateByAddingUnit(.Day, value: -Int(decreaseDays!)!, toDate: quitDay!, options: [])
         self.quitDate.text = self.dateFormat.stringFromDate(quitDay!)
-
+    
     }
     
     func endEditingNow(){
@@ -95,6 +95,10 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         }else{//退伍日期（如果折抵算錯可自行更改
             self.quitDate.text = dateFormat.stringFromDate(sender.date)
             self.quitDate.resignFirstResponder()
+        }
+        //入伍及退伍日皆有才可按
+        if (self.entryDate.text != nil && self.quitDate.text != nil){
+             self.sendButton.enabled = true
         }
     }
     

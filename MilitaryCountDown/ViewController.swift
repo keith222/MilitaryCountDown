@@ -27,13 +27,12 @@ class ViewController: UIViewController{
         //放iAD
         self.canDisplayBannerAds = true
         
-        self.navigationItem.hidesBackButton = true;
-        
-        if(userDefault.stringForKey("entryDay") != "" && userDefault.stringForKey("quitDay") != ""){
+        self.navigationItem.hidesBackButton = true
+        if let entryString = userDefault.stringForKey("entryDay"), let quitString = userDefault.stringForKey("quitDay"){
             //取出userdefaults裡的日期
             dateFormat.dateFormat = "yyyy-MM-dd"
-            let entryDay = dateFormat.dateFromString(userDefault.stringForKey("entryDay")!)
-            let quitDay = dateFormat.dateFromString(userDefault.stringForKey("quitDay")!)
+            let entryDay = dateFormat.dateFromString(entryString)
+            let quitDay = dateFormat.dateFromString(quitString)
             //計算日期相減及比例
             let nowDays = calendar.components(.Day, fromDate: entryDay!, toDate: NSDate(), options: [])
             let durationDays = calendar.components(.Day, fromDate: entryDay!, toDate:quitDay!, options: [])

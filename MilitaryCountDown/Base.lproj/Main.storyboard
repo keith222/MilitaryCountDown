@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QhT-2O-Sdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QhT-2O-Sdg">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -296,29 +295,28 @@
                                 <rect key="frame" x="20" y="498" width="560" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="IhC-T6-pEu"/>
-                                    <constraint firstAttribute="width" constant="560" id="KIJ-ET-V24"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="ZEU-8j-UTB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ZEU-8j-UTB"/>
-                                    </mask>
-                                </variation>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="還有：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR4-HC-J0b">
                                 <rect key="frame" x="20" y="458" width="75" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6q-Z3-oBg">
                                 <rect key="frame" x="176" y="458" width="25" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-ov-vuW">
                                 <rect key="frame" x="85" y="446" width="88" height="42"/>
@@ -329,6 +327,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqc-LC-W6d">
                                 <rect key="frame" x="480" y="388" width="100" height="100"/>
@@ -389,6 +389,7 @@
                             <constraint firstItem="U6q-Z3-oBg" firstAttribute="leading" secondItem="cNl-ov-vuW" secondAttribute="trailing" constant="3" id="eIQ-36-hZB"/>
                             <constraint firstItem="jR4-HC-J0b" firstAttribute="leading" secondItem="vfv-om-8RR" secondAttribute="leading" constant="20" id="mk5-14-yIW"/>
                             <constraint firstAttribute="trailing" secondItem="plh-gG-ICB" secondAttribute="trailing" id="rC4-Vt-6v1"/>
+                            <constraint firstAttribute="trailing" secondItem="rfY-xA-s3f" secondAttribute="trailing" constant="20" id="sKs-Zd-VL3"/>
                             <constraint firstItem="plh-gG-ICB" firstAttribute="top" secondItem="vfv-om-8RR" secondAttribute="top" id="xE1-04-qyI"/>
                             <constraint firstItem="hTo-qx-aXS" firstAttribute="top" secondItem="plh-gG-ICB" secondAttribute="bottom" id="xWN-IP-DKN"/>
                             <constraint firstItem="hTo-qx-aXS" firstAttribute="top" secondItem="58h-x6-tT2" secondAttribute="bottom" constant="27" id="xkt-oS-S4m"/>

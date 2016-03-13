@@ -152,7 +152,11 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         monthNotification.timeZone = NSTimeZone.defaultTimeZone()
         monthNotification.soundName = UILocalNotificationDefaultSoundName
         monthNotification.alertBody = "恭喜破月（入伍）啦！！"
-        monthNotification.alertTitle = title
+        if #available(iOS 8.2, *) {
+            monthNotification.alertTitle = title
+        } else {
+            // Fallback on earlier versions
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(monthNotification)
         
         //入伍破百
@@ -161,7 +165,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         hundredNotification.timeZone = NSTimeZone.defaultTimeZone()
         hundredNotification.soundName = UILocalNotificationDefaultSoundName
         hundredNotification.alertBody = "恭喜破百（入伍）啦！！"
-        hundredNotification.alertTitle = title
+        if #available(iOS 8.2, *) {
+            hundredNotification.alertTitle = title
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(hundredNotification)
         
         //入伍半年
@@ -170,7 +176,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         halfYearNotification.timeZone = NSTimeZone.defaultTimeZone()
         halfYearNotification.soundName = UILocalNotificationDefaultSoundName
         halfYearNotification.alertBody = "恭喜入伍半年啦！！要升一兵，還有加薪\"500\"塊囉！"
-        halfYearNotification.alertTitle = title
+        if #available(iOS 8.2, *) {
+            halfYearNotification.alertTitle = title
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(halfYearNotification)
         
         //退伍破百
@@ -179,7 +187,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         countDownHundredNotification.timeZone = NSTimeZone.defaultTimeZone()
         countDownHundredNotification.soundName = UILocalNotificationDefaultSoundName
         countDownHundredNotification.alertBody = "恭喜破百啦！！"
-        countDownHundredNotification.alertTitle = title
+        if #available(iOS 8.2, *) {
+            countDownHundredNotification.alertTitle = title
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(countDownHundredNotification)
         
         //退伍破月
@@ -188,7 +198,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         countDownMonthNotification.timeZone = NSTimeZone.defaultTimeZone()
         countDownMonthNotification.soundName = UILocalNotificationDefaultSoundName
         countDownMonthNotification.alertBody = "恭喜破月啦！！再撐一下！"
-        countDownMonthNotification.alertTitle = title
+        if #available(iOS 8.2, *) {
+            countDownMonthNotification.alertTitle = title
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(countDownMonthNotification)
         
         //退伍日
@@ -197,7 +209,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         endDay.timeZone = NSTimeZone.defaultTimeZone()
         endDay.soundName = UILocalNotificationDefaultSoundName
         endDay.alertBody = "恭喜終於登出啦！！"
-        endDay.alertTitle = title
+        if #available(iOS 8.2, *) {
+            endDay.alertTitle = title
+        }
         UIApplication.sharedApplication().scheduleLocalNotification(endDay)
         
         //儲存後回到首頁

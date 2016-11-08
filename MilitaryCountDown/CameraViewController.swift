@@ -35,18 +35,18 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.photoButton.layer.borderColor = UIColor.whiteColor().CGColor
-        self.photoButton.setTitleColor(UIColor.darkGrayColor(), forState: .Highlighted)
-        self.backButton.layer.borderColor = UIColor.whiteColor().CGColor
+        self.photoButton.layer.borderColor = UIColor.white.cgColor
+        self.photoButton.setTitleColor(UIColor.darkGray, for: .highlighted)
+        self.backButton.layer.borderColor = UIColor.white.cgColor
         
         //高解析度照相
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         
-        let devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo) as! [AVCaptureDevice]
+        let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as! [AVCaptureDevice]
         for device in devices {
-            if device.position == AVCaptureDevicePosition.Back{
+            if device.position == AVCaptureDevicePosition.back{
                 self.backFacingCamera = device
-            }else if device.position == AVCaptureDevicePosition.Front{
+            }else if device.position == AVCaptureDevicePosition.front{
                 self.frontFaceingCamera = device
             }
         }
@@ -69,23 +69,23 @@ class CameraViewController: UIViewController {
         self.view.layer.addSublayer(cameraPreviewLayer!)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         cameraPreviewLayer?.frame = view.layer.frame
-        self.view.bringSubviewToFront(self.photoButton)
-        self.view.bringSubviewToFront(self.switchButton)
-        self.view.bringSubviewToFront(self.backButton)
+        self.view.bringSubview(toFront: self.photoButton)
+        self.view.bringSubview(toFront: self.switchButton)
+        self.view.bringSubview(toFront: self.backButton)
         captureSession.startRunning()
         // Do any additional setup after loading the view.
     }
     
     //手勢放大
     func zoomGesture() {
-        if self.zoomGestureRecognizer.state == UIGestureRecognizerState.Changed{
+        if self.zoomGestureRecognizer.state == UIGestureRecognizerState.changed{
             if let zoomFactor = self.currentDevice?.videoZoomFactor{
                 var newZoomFactor:CGFloat?
                 if zoomFactor < 5.0{
                     newZoomFactor = min(zoomFactor + 1.0, 5.0)
                     do {
                         try self.currentDevice?.lockForConfiguration()
-                        self.currentDevice?.rampToVideoZoomFactor(newZoomFactor!, withRate: 1.0)
+                        self.currentDevice?.ramp(toVideoZoomFactor: newZoomFactor!, withRate: 1.0)
                         self.currentDevice?.unlockForConfiguration()
                     } catch {
                         print(error)
@@ -94,7 +94,7 @@ class CameraViewController: UIViewController {
                     newZoomFactor = max(zoomFactor - 1.0, 1.0)
                     do {
                         try self.currentDevice?.lockForConfiguration()
-                        self.currentDevice?.rampToVideoZoomFactor(newZoomFactor!, withRate: 1.0)
+                        self.currentDevice?.ramp(toVideoZoomFactor: newZoomFactor!, withRate: 1.0)
                         self.currentDevice?.unlockForConfiguration()
                     } catch {
                         print(error)
@@ -109,18 +109,18 @@ class CameraViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhoto"{
-            let photoViewController = segue.destinationViewController as! PhotoViewController
+            let photoViewController = segue.destination as! PhotoViewController
             photoViewController.image = self.stillImage
         }
     }
     
-    @IBAction func switchButton(sender: AnyObject) {
+    @IBAction func switchButton(_ sender: AnyObject) {
         captureSession.beginConfiguration()
         
         //變更相機位置
-        let newDevice = (self.currentDevice?.position == AVCaptureDevicePosition.Back) ? self.frontFaceingCamera : self.backFacingCamera
+        let newDevice = (self.currentDevice?.position == AVCaptureDevicePosition.back) ? self.frontFaceingCamera : self.backFacingCamera
         
         //移除輸入
         for input in captureSession.inputs {
@@ -143,14 +143,14 @@ class CameraViewController: UIViewController {
         
     }
     
-    @IBAction func captureButton(sender: AnyObject) {
-        let videoConnection = self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
+    @IBAction func captureButton(_ sender: AnyObject) {
+        let videoConnection = self.stillImageOutput?.connection(withMediaType: AVMediaTypeVideo)
         
-        self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {
+        self.stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
             (imageDataSampleBuffer, error)-> Void in
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-            self.stillImage = UIImage(data: imageData)
-            self.performSegueWithIdentifier("showPhoto", sender: self)
+            self.stillImage = UIImage(data: imageData!)
+            self.performSegue(withIdentifier: "showPhoto", sender: self)
         })
     }
 }

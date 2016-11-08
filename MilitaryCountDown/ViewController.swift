@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import iAd
 
 class ViewController: UIViewController{
     
@@ -17,91 +16,75 @@ class ViewController: UIViewController{
     @IBOutlet var daysLabel: UILabel!
     
     //初始NSUserDefaults
-    let userDefault = NSUserDefaults.standardUserDefaults()
-    let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-    let dateFormat: NSDateFormatter = NSDateFormatter()
+    let userDefault = UserDefaults.standard
+    let calendar: Calendar! = Calendar(identifier: Calendar.Identifier.gregorian)
+    let dateFormat: DateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //放iAD
         self.canDisplayBannerAds = true
-<<<<<<< HEAD
-        self.navigationItem.hidesBackButton = true;
-        
-        if(userDefault.stringForKey("entryDay") != nil && userDefault.stringForKey("quitDay") != nil){
-=======
-        
         self.navigationItem.hidesBackButton = true
-        if let entryString = userDefault.stringForKey("entryDay"), let quitString = userDefault.stringForKey("quitDay"){
->>>>>>> develope
+        if let entryString = userDefault.string(forKey: "entryDay"), let quitString = userDefault.string(forKey: "quitDay"){
             //取出userdefaults裡的日期
             dateFormat.dateFormat = "yyyy-MM-dd"
-<<<<<<< HEAD
-            let entryDay = dateFormat.dateFromString(userDefault.stringForKey("entryDay")!)
-            let quitDay = dateFormat.dateFromString(userDefault.stringForKey("quitDay")!)
-            
-=======
-            let entryDay = dateFormat.dateFromString(entryString)
-            let quitDay = dateFormat.dateFromString(quitString)
->>>>>>> feature
+
+            let entryDay = dateFormat.date(from: entryString)
+            let quitDay = dateFormat.date(from: quitString)
             //計算日期相減及比例
-            let nowDays = calendar.components(.Day, fromDate: entryDay!, toDate: NSDate(), options: [])
-            let durationDays = calendar.components(.Day, fromDate: entryDay!, toDate:quitDay!, options: [])
-            let surplusDays = calendar.components(.Day, fromDate: NSDate(), toDate: quitDay!, options: [])
-            var percentage = CGFloat(nowDays.day)/CGFloat(durationDays.day)
-            let formatter = NSNumberFormatter()
-            formatter.numberStyle = .DecimalStyle
-            percentage = CGFloat(formatter.numberFromString(formatter.stringFromNumber(percentage)!)!)
-            self.percentLabel.text = formatter.stringFromNumber(percentage*100)!+"%"
-            self.daysLabel.text = String(surplusDays.day)
+            
+            let nowDays = calendar.dateComponents([.day], from: entryDay!, to: Date())
+            let durationDays = calendar.dateComponents([.day], from: entryDay!, to:quitDay!)
+            let surplusDays = calendar.dateComponents([.day], from: Date(), to: quitDay!)
+            let percentage = Float(nowDays.day!)/Float(durationDays.day!)
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            self.percentLabel.text = formatter.string(from: (percentage * 100) as NSNumber)!+"%"
+            self.daysLabel.text = String(describing: surplusDays.day)
             
             //加入circle chart
-            addCircleView(self.circleChartView, duration: 0.5, fromValue: 0.0, toValue: percentage)
+            addCircleView(self.circleChartView, duration: 0.5, fromValue: 0.0, toValue: CGFloat(percentage))
         }
 
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    
+    override func viewDidAppear(_ animated: Bool) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let resultViewController = storyBoard.instantiateViewControllerWithIdentifier("DateSelect") as! DateSelectViewController
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "DateSelect") as! DateSelectViewController
         
         //如果userdefault裡面沒有日期資料則跳出設定視窗
-        if( (userDefault.stringForKey("entryDay") == nil && userDefault.stringForKey("quitDay") == nil) || (userDefault.stringForKey("entryDay") == "" && userDefault.stringForKey("quitDay") == "") ){
+        if( (userDefault.string(forKey: "entryDay") == nil && userDefault.string(forKey: "quitDay") == nil) || (userDefault.string(forKey: "entryDay") == "" && userDefault.string(forKey: "quitDay") == "") ){
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
 
     }
     
-    func addCircleView(myView: UIView, duration: NSTimeInterval, fromValue: CGFloat, toValue: CGFloat){
+    func addCircleView(_ myView: UIView, duration: TimeInterval, fromValue: CGFloat, toValue: CGFloat){
 
         //設定circlechart 的長寬
         let circleWidth = CGFloat(250)
         let circleHeight = circleWidth
         
         //畫出新的CircleView
-        let circleView = CircleView(frame: CGRectMake(0,0,circleWidth,circleHeight))
+        let circleView = CircleView(frame: CGRect(x: 0,y: 0,width: circleWidth,height: circleHeight))
         
         //設定circlechart線條顏色
-        circleView.setStrokeColor(UIColor(red: 53.0/255.0, green: 193.0/255.0, blue: 78.0/255.0, alpha: 1).CGColor)
+        circleView.setStrokeColor(UIColor(red: 53.0/255.0, green: 193.0/255.0, blue: 78.0/255.0, alpha: 1).cgColor)
         
         myView.addSubview(circleView)
         
         //初始圓圈從0度(上）開始畫
-        circleView.transform = CGAffineTransformMakeRotation(-1.56)
+        circleView.transform = CGAffineTransform(rotationAngle: -1.56)
         
         //繪圖動畫
         circleView.animateCircleTo(duration, fromValue: fromValue, toValue: toValue)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func unwindToCamera(segue:UIStoryboardSegue) {
+    func unwindToCamera(_ segue:UIStoryboardSegue) {
     }
 
 }

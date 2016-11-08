@@ -14,7 +14,7 @@ class CircleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
         // The path should be the entire circle.
@@ -22,11 +22,11 @@ class CircleView: UIView {
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer = CAShapeLayer()
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
         
         //I'm going to change this in the ViewController that uses this. Not the best way, I know but alas.
-        circleLayer.strokeColor = UIColor.redColor().CGColor
+        circleLayer.strokeColor = UIColor.red.cgColor
         
         //You probably want to change this width
         circleLayer.lineWidth = 20.0;
@@ -39,17 +39,17 @@ class CircleView: UIView {
         
     }
     
-    func setStrokeColor(color : CGColorRef) {
+    func setStrokeColor(_ color : CGColor) {
         circleLayer.strokeColor = color
     }
     
     // This is what you call if you want to draw a full circle.
-    func animateCircle(duration: NSTimeInterval) {
+    func animateCircle(_ duration: TimeInterval) {
         animateCircleTo(duration, fromValue: 0.0, toValue: 1.0)
     }
     
     // This is what you call to draw a partial circle.
-    func animateCircleTo(duration: NSTimeInterval, fromValue: CGFloat, toValue: CGFloat){
+    func animateCircleTo(_ duration: TimeInterval, fromValue: CGFloat, toValue: CGFloat){
         // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -68,7 +68,7 @@ class CircleView: UIView {
         circleLayer.strokeEnd = toValue
         
         // Do the actual animation
-        circleLayer.addAnimation(animation, forKey: "animateCircle")
+        circleLayer.add(animation, forKey: "animateCircle")
     }
     
     

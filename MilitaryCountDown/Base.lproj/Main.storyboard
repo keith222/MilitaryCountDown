@@ -26,7 +26,7 @@
                                 <rect key="frame" x="62.5" y="55" width="250" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-pe-QIg">
-                                        <rect key="frame" x="75" y="122" width="100" height="52"/>
+                                        <rect key="frame" x="75" y="122" width="100" height="51.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="43"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -44,19 +44,11 @@
                                     <constraint firstAttribute="width" constant="250" id="Bej-0w-ejf"/>
                                     <constraint firstItem="5qf-bs-hoA" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="86" id="GKF-36-v6y"/>
                                     <constraint firstItem="e1f-pe-QIg" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="75" id="LBP-Pw-0Yl"/>
-                                    <constraint firstItem="e1f-pe-QIg" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="75" id="b35-vC-Iao"/>
                                     <constraint firstItem="5qf-bs-hoA" firstAttribute="top" secondItem="dMn-lg-w2a" secondAttribute="top" constant="94" id="cMh-ym-BLN"/>
                                     <constraint firstAttribute="trailing" secondItem="5qf-bs-hoA" secondAttribute="trailing" constant="86" id="cSm-GY-pNh"/>
-                                    <constraint firstAttribute="trailing" secondItem="e1f-pe-QIg" secondAttribute="trailing" constant="75" id="g5o-ZC-liL"/>
                                     <constraint firstAttribute="trailing" secondItem="e1f-pe-QIg" secondAttribute="trailing" constant="75" id="jas-46-VLu"/>
                                     <constraint firstItem="e1f-pe-QIg" firstAttribute="top" secondItem="dMn-lg-w2a" secondAttribute="top" constant="122" id="kK8-zt-Bkb"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="b35-vC-Iao"/>
-                                        <exclude reference="g5o-ZC-liL"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="還有：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-NH-3mr">
                                 <rect key="frame" x="49.5" y="363" width="91" height="36"/>
@@ -87,7 +79,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-cL-ebr">
                                 <rect key="frame" x="0.0" y="553" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.23647921045987685" green="0.83489583333333328" blue="0.52401752148165048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.37593294999999999" green="0.62933361629999995" blue="0.37782442430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BTC-YQ-Is9"/>
                                 </constraints>
@@ -542,7 +534,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23529411764705882" green="0.83529411764705885" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.37593294999999999" green="0.62933361629999995" blue="0.37782442430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xCR-Z1-kW7" firstAttribute="leading" secondItem="zH9-gr-FQr" secondAttribute="leading" id="BXk-wR-lCT"/>
                             <constraint firstItem="iN1-Es-QrN" firstAttribute="top" secondItem="xCR-Z1-kW7" secondAttribute="bottom" id="Neu-f2-rbx"/>

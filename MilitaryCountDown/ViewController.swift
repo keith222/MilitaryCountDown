@@ -23,8 +23,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //放iAD
-        self.canDisplayBannerAds = true
+
         self.navigationItem.hidesBackButton = true
         if let entryString = userDefault.string(forKey: "entryDay"), let quitString = userDefault.string(forKey: "quitDay"){
             //取出userdefaults裡的日期
@@ -32,16 +31,26 @@ class ViewController: UIViewController{
 
             let entryDay = dateFormat.date(from: entryString)
             let quitDay = dateFormat.date(from: quitString)
-            //計算日期相減及比例
             
+            
+            
+            //計算日期相減及比例
             let nowDays = calendar.dateComponents([.day], from: entryDay!, to: Date())
             let durationDays = calendar.dateComponents([.day], from: entryDay!, to:quitDay!)
             let surplusDays = calendar.dateComponents([.day], from: Date(), to: quitDay!)
             let percentage = Float(nowDays.day!)/Float(durationDays.day!)
+            
+            //小數點設定
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
-            self.percentLabel.text = formatter.string(from: (percentage * 100) as NSNumber)!+"%"
-            self.daysLabel.text = String(describing: surplusDays.day)
+            formatter.maximumFractionDigits = 1
+            formatter.minimumFractionDigits = 1
+            
+            let percentageNum = ((percentage * 100) > 100) ? 100 : (percentage * 100)
+            self.percentLabel.text = formatter.string(from: percentageNum as NSNumber)!+"%"
+            
+            let dayNum = (surplusDays.day! < 0) ? 0 : surplusDays.day!
+            self.daysLabel.text = String(describing: dayNum)
             
             //加入circle chart
             addCircleView(self.circleChartView, duration: 0.5, fromValue: 0.0, toValue: CGFloat(percentage))
@@ -72,7 +81,7 @@ class ViewController: UIViewController{
         let circleView = CircleView(frame: CGRect(x: 0,y: 0,width: circleWidth,height: circleHeight))
         
         //設定circlechart線條顏色
-        circleView.setStrokeColor(UIColor(red: 53.0/255.0, green: 193.0/255.0, blue: 78.0/255.0, alpha: 1).cgColor)
+        circleView.setStrokeColor(UIColor(red: 96.0/255.0, green: 160.0/255.0, blue: 96.0/255.0, alpha: 1).cgColor)
         
         myView.addSubview(circleView)
         

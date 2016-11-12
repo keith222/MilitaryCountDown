@@ -22,21 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solider" translatesAutoresizingMaskIntoConstraints="NO" id="GGE-w4-rk5">
+                                <rect key="frame" x="9" y="61" width="356" height="460"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="460" id="IDa-Xl-SVF"/>
+                                    <constraint firstAttribute="width" constant="356" id="dBj-8T-sHM"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="國軍倒數" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-aQ-Spr">
                                 <rect key="frame" x="107" y="397.5" width="161" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solider" translatesAutoresizingMaskIntoConstraints="NO" id="GGE-w4-rk5">
-                                <rect key="frame" x="9" y="61.5" width="356" height="460"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="460" id="IDa-Xl-SVF"/>
-                                    <constraint firstAttribute="width" constant="356" id="dBj-8T-sHM"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23529411759999999" green="0.83529411760000005" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.37593295000703464" green="0.62933361633096441" blue="0.37782442431015689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GGE-w4-rk5" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="148" id="5FL-3m-9mE"/>
                             <constraint firstItem="GGE-w4-rk5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-42" id="7cr-wb-nwk"/>

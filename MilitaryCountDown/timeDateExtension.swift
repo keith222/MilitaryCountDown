@@ -12,24 +12,24 @@ extension DateComponents {
     /** returns the current date plus the receiver's interval */
     var fromNow: Date {
         let cal = Calendar.current
-        return (cal as NSCalendar).date(byAdding: self, to: Date(), options: [])!
+        return cal.date(byAdding: self, to: Date())!
     }
     
     /** returns the current date minus the receiver's interval */
     var ago: Date {
         let cal = Calendar.current
-        return (cal as NSCalendar).date(byAdding: -self, to: Date(), options: [])!
+        return cal.date(byAdding: -self, to: Date())!
     }
     
     //return the specific date plus the receiver's interval
     func daysFrom(_ date: Date) -> Date{
         let cal = Calendar.current
-        return (cal as NSCalendar).date(byAdding: self, to: date, options: [])!
+        return cal.date(byAdding: self, to: date)!
     }
     
     func daysAgo(_ date: Date) -> Date{
         let cal = Calendar.current
-        return (cal as NSCalendar).date(byAdding: -self, to: date, options: [])!
+        return cal.date(byAdding: -self, to: date)!
     }
 }
 
@@ -64,12 +64,13 @@ func -(left: DateComponents, right: DateComponents) -> DateComponents {
 /** negates the two sets of date components */
 public prefix func -(comps: DateComponents) -> DateComponents {
     var result = DateComponents()
-    if(comps.second != NSDateComponentUndefined) { result.second = -comps.minute! }
-    if(comps.minute != NSDateComponentUndefined) { result.minute = -comps.minute! }
-    if(comps.hour != NSDateComponentUndefined) { result.hour = -comps.hour! }
-    if(comps.day != NSDateComponentUndefined) { result.day = -comps.day! }
-    if(comps.month != NSDateComponentUndefined) { result.month = -comps.month! }
-    if(comps.year != NSDateComponentUndefined) { result.year = -comps.year! }
+    
+    if(comps.second != nil) { result.second = -comps.minute! }
+    if(comps.minute != nil) { result.minute = -comps.minute! }
+    if(comps.hour != nil) { result.hour = -comps.hour! }
+    if(comps.day != nil) { result.day = -comps.day! }
+    if(comps.month != nil) { result.month = -comps.month! }
+    if(comps.year != nil) { result.year = -comps.year! }
     return result
 }
 

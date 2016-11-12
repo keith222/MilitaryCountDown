@@ -99,7 +99,7 @@ class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let circleView = CircleView(frame: CGRect(x: 0,y: 0,width: circleWidth,height: circleHeight))
         
         //設定circlechart線條顏色
-        circleView.setStrokeColor(UIColor(red: 43.0/255.0, green: 236.0/255.0, blue: 127.0/255.0, alpha: 0.8).cgColor)
+        circleView.setStrokeColor(UIColor(red: 96.0/255.0, green: 160.0/255.0, blue: 96.0/255.0, alpha: 0.8).cgColor)
         
         myView.addSubview(circleView)
         

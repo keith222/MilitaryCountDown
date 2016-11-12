@@ -23,9 +23,7 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //放iAd
-        self.canDisplayBannerAds = true
+
         //按鈕外框
         self.sendButton.layer.cornerRadius = 20
         self.sendButton.layer.borderWidth = 1
@@ -65,8 +63,9 @@ class DateSelectViewController: UIViewController,UITextFieldDelegate {
         if(decreaseDays == ""){
             decreaseDays = "0"
         }
-        var quitDay = (self.userCallendar as NSCalendar).date(byAdding: .year, value: 1, to: entryDate!, options: [])
-        quitDay = (self.userCallendar as NSCalendar).date(byAdding: .day, value: -Int(decreaseDays!)!, to: quitDay!, options: [])
+        
+        var quitDay = self.userCallendar.date(byAdding: .year, value: 1, to: entryDate!)
+        quitDay = self.userCallendar.date(byAdding: .day, value: -Int(decreaseDays!)!, to: quitDay!)
         self.quitDate.text = self.dateFormat.string(from: quitDay!)
     
     }

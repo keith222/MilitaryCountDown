@@ -61,10 +61,16 @@ class PhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             let durationDays = calendar.dateComponents([.day], from: entryDay!, to:quitDay!)
             let surplusDays = calendar.dateComponents([.day], from: Date(), to: quitDay!)
             let percentage = Float(nowDays.day!)/Float(durationDays.day!)
+            
+            //小數點設定
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 1
+            formatter.minimumFractionDigits = 1
             self.percentLabel.text = formatter.string(from: (percentage * 100) as NSNumber)!+"%"
-            self.daysLabel.text = String(describing: surplusDays.day)
+            
+            let dayNum = (surplusDays.day! < 0) ? 0 : surplusDays.day!
+            self.daysLabel.text = String(describing: dayNum)
             
             //加入circle chart
             addCircleView(self.circleChartView, duration: 0.5, fromValue: 0.0, toValue: CGFloat(percentage))

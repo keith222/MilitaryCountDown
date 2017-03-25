@@ -45,10 +45,8 @@ class ViewController: UIViewController{
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 1
             formatter.minimumFractionDigits = 1
-            
             let percentageNum = ((percentage * 100) > 100) ? 100 : (percentage * 100)
             self.percentLabel.text = formatter.string(from: percentageNum as NSNumber)!+"%"
-            
             let dayNum = (surplusDays.day! < 0) ? 0 : surplusDays.day!
             self.daysLabel.text = String(describing: dayNum)
             

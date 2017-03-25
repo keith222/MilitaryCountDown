@@ -144,13 +144,35 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func captureButton(_ sender: AnyObject) {
-        let videoConnection = self.stillImageOutput?.connection(withMediaType: AVMediaTypeVideo)
-        
-        self.stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
-            (imageDataSampleBuffer, error)-> Void in
-            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-            self.stillImage = UIImage(data: imageData!)
-            self.performSegue(withIdentifier: "showPhoto", sender: self)
-        })
+        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized {
+            let videoConnection = self.stillImageOutput?.connection(withMediaType: AVMediaTypeVideo)
+            
+            self.stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
+                (imageDataSampleBuffer, error)-> Void in
+                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                self.stillImage = UIImage(data: imageData!)
+                self.performSegue(withIdentifier: "showPhoto", sender: self)
+            })
+        }else{
+            let alert = UIAlertController(title: "提示", message: "並未允許「國軍倒數」使用手機相機，請至「設定」>「國軍倒數」開啟權限。", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let goForward = UIAlertAction(title: "前往", style: .default, handler: { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(settingsUrl)
+                    }
+                }
+            })
+            
+            alert.addAction(cancel)
+            alert.addAction(goForward)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

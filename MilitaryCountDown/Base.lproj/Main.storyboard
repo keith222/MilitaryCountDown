@@ -25,8 +25,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-lg-w2a">
                                 <rect key="frame" x="62.5" y="55" width="250" height="250"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-pe-QIg">
-                                        <rect key="frame" x="65" y="122" width="120" height="51.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-pe-QIg">
+                                        <rect key="frame" x="55" y="122" width="140" height="51.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="43"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -43,10 +43,10 @@
                                     <constraint firstAttribute="height" constant="250" id="7WO-j8-Qad"/>
                                     <constraint firstAttribute="width" constant="250" id="Bej-0w-ejf"/>
                                     <constraint firstItem="5qf-bs-hoA" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="86" id="GKF-36-v6y"/>
-                                    <constraint firstItem="e1f-pe-QIg" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="65" id="LBP-Pw-0Yl"/>
+                                    <constraint firstItem="e1f-pe-QIg" firstAttribute="leading" secondItem="dMn-lg-w2a" secondAttribute="leading" constant="55" id="LBP-Pw-0Yl"/>
                                     <constraint firstItem="5qf-bs-hoA" firstAttribute="top" secondItem="dMn-lg-w2a" secondAttribute="top" constant="94" id="cMh-ym-BLN"/>
                                     <constraint firstAttribute="trailing" secondItem="5qf-bs-hoA" secondAttribute="trailing" constant="86" id="cSm-GY-pNh"/>
-                                    <constraint firstAttribute="trailing" secondItem="e1f-pe-QIg" secondAttribute="trailing" constant="65" id="jas-46-VLu"/>
+                                    <constraint firstAttribute="trailing" secondItem="e1f-pe-QIg" secondAttribute="trailing" constant="55" id="jas-46-VLu"/>
                                     <constraint firstItem="e1f-pe-QIg" firstAttribute="top" secondItem="dMn-lg-w2a" secondAttribute="top" constant="122" id="kK8-zt-Bkb"/>
                                 </constraints>
                             </view>
@@ -133,7 +133,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Military Life Count Down" id="rAw-La-WOk">
+                    <navigationItem key="navigationItem" title="國軍倒數" id="rAw-La-WOk">
                         <barButtonItem key="rightBarButtonItem" image="setting" id="6po-tm-w94">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
